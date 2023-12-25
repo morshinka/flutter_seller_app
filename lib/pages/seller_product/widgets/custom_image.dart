@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_seller_app/common/global_variables.dart';
 
 import '../../utils/images.dart';
 
@@ -24,7 +25,7 @@ class CustomImage extends StatelessWidget {
       width: width,
       fit: BoxFit.cover,
       placeholder: Images.placeholder,
-      image: image,
+      image: image.contains('http') ? image : GlobarVariables.baseUrl + image,
       imageErrorBuilder: (c, o, s) => Image.asset(
         Images.placeholder,
         height: height,
