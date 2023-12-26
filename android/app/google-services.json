@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "897501420398",
+    "project_id": "e-commerce-mrsh-app",
+    "storage_bucket": "e-commerce-mrsh-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897501420398:android:751d6dfda05e29ac273f7f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_seller_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkGA13ZQ6HcUsUkXBCwBqPvMulGVoIEqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
