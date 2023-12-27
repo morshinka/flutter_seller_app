@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_seller_app/bloc/Add_image/add_image_bloc.dart';
@@ -9,7 +7,7 @@ import 'package:flutter_seller_app/common/global_variables.dart';
 import 'package:flutter_seller_app/data/model/categories_response_model.dart';
 import 'package:flutter_seller_app/data/model/request/product_request_model.dart';
 import 'package:flutter_seller_app/pages/dashboard/seller_dashboard_page.dart';
-import 'package:http/http.dart';
+
 import 'package:image_picker/image_picker.dart';
 
 import '../../pages/base_widgets/custom_app_bar.dart';

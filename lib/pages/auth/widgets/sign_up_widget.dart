@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_seller_app/pages/dashboard/seller_dashboard_page.dart';
 
 import '../../../bloc/register/register_bloc.dart';
 import '../../../data/datasource/auth_local_datasource.dart';
+import '../../../data/datasource/firebase_messaging_remote_datasource.dart';
 import '../../../data/model/request/register_request_model.dart';
 import '../../base_widgets/button/custom_button.dart';
 import '../../base_widgets/text_field/custom_password_textfield.dart';
@@ -146,10 +148,11 @@ class SignUpWidgetState extends State<SignUpWidget> {
                 },
                 loaded: (data) async {
                   await AuthLocalDatasource().saveAuthData(data);
-                  // Navigator.pushAndRemoveUntil(context,
-                  //     MaterialPageRoute(builder: (context) {
-                  //   return const DashboardPage();
-                  // }), (route) => false);
+                  await FirebaseMessagingRemoteDatasource().initNotification();
+                  Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (context) {
+                    return const SellerDashboardPage();
+                  }), (route) => false);
                 },
               );
             },

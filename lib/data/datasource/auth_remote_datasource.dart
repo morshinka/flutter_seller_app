@@ -69,4 +69,27 @@ class AuthRemoteDatasource {
       return left("Server Error");
     }
   }
+
+  // update fmc token dart
+
+  Future<Either<String, String>> updateFcmToken(String fcmToken) async {
+    final token = await AuthLocalDatasource().getToken();
+    final headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer $token',
+    };
+    final body = jsonEncode({'fcm_token': fcmToken});
+    final response = await http.post(
+      Uri.parse('${GlobarVariables.baseUrl}/api/fcm-token'),
+      headers: headers,
+      body: body,
+    );
+
+    if (response.statusCode == 200) {
+      return const Right('Update fcm Token success');
+    } else {
+      return left('Server Error');
+    }
+  }
 }
